@@ -1,4 +1,4 @@
-package bee.singleton
+package bee.creational.singleton
 /**
  *  A singleton use case: An app that needs a registry of students
  * */

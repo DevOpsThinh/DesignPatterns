@@ -1,4 +1,10 @@
-package bee.builder
+/**
+ * Lets u construct complex  objects step by step & allows u to produce different types &
+ * representations of an object using the same construction code.
+ * @author Nguyen Truong Thinh
+ *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
+ * */
+package bee.creational.builder
 /**
  * The  Car's Version 2
  *  A car depends on a lot of things: engine, number of doors, colors, name, transmission
