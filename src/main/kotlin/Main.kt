@@ -1,20 +1,32 @@
 import bee.creational.abstractfactory.Parser
 import bee.creational.builder.CarOne
+import bee.creational.builder.MailBuilder
 import bee.creational.factorymethod.ChessPiece
 import bee.creational.factorymethod.Server
 import bee.creational.factorymethod.createPiece
+import bee.creational.prototype.Role
+import bee.creational.prototype.User
 import bee.creational.singleton.Database
 import bee.creational.singleton.Student
-import bee.structural.decorator.BunPhoVietDecorator
-import bee.structural.decorator.DauBunMamTom
+import bee.structural.decorator.*
+import bee.structural.facade.UserInterface
 
 //import bee.creational.abstractfactory.Parser.ServerConfigImpl.property
 //import bee.creational.abstractfactory.Parser.ServerConfigImpl.server
+
+private val allUsers = mutableListOf<User>()
 
 fun main(args: Array<String>) {
 // ********************************************************************************
 //                                                  Creational design patterns
 // ********************************************************************************
+    /**
+     *  The Prototype pattern
+     * */
+    val oriUser = User("Admin", Role.ADMIN, setOf("READ", "WRITE", "DELETE"))
+    allUsers += oriUser
+    createUser("OtherAdmin", Role.ADMIN)
+    println(allUsers)
     /**
      * The abstract factory
      * */
@@ -48,6 +60,14 @@ fun main(args: Array<String>) {
         "ABS", null, "Petrol"
     )
 
+    val mail = MailBuilder()
+        .setRecepients(listOf("nguyentruongthinhvn2020@gmail.com"))
+        .setMessage("Hi everyone!")
+        .build()
+
+    println(mail.to)
+    println(mail.cc)
+    println(mail.message)
     /**
      *  The singleton pattern
      * */
@@ -62,6 +82,44 @@ fun main(args: Array<String>) {
     StudentRegistry.addStudent(teo)
     StudentRegistry.addStudent(ti)
     StudentRegistry.listAllStudents()
+
+    // ********************************************************************************
+    //                                                  Structural design patterns
+    // ********************************************************************************
+    /**
+     *  The Decorator pattern
+     * */
+    val daubun = DauBunMamTom().apply {
+        cook()
+    }
+    val bunVietNam = BunPhoVietDecorator(daubun).apply {
+        cook()
+    }
+
+    val starTrekRepos = DefaultStarTrekRepos()
+    val withValidating = ValidatingAdd(starTrekRepos)
+    val withloggingValidating = LoggingGetCaptain(withValidating)
+
+    withloggingValidating["USS Enterprise"]
+
+    try {
+        withloggingValidating["USS Voyagers-ss"] = "ABC ABC ABC"
+    } catch (e: IllegalStateException) {
+        println(e)
+    }
+
+    println(withloggingValidating is LoggingGetCaptain)
+    println(withloggingValidating is StarTrekRepos)
+
+    /**
+     *  The Facade pattern
+     * */
+    val userInterface = UserInterface()
+    with(userInterface) {
+        browseInternet()
+        playMedia()
+        manageDocs()
+    }
 }
 
 /**
@@ -83,16 +141,13 @@ object StudentRegistry {
             println(it.fullName)
         }
     }
-// ********************************************************************************
-//                                                  Structural design patterns
-// ********************************************************************************
-    /**
-     *  The Decorator pattern
-     * */
-    val daubun = DauBunMamTom().apply {
-        cook()
-    }
-    val bunVietNam = BunPhoVietDecorator(daubun).apply {
-        cook()
+}
+
+fun createUser(_name: String, role: Role) {
+    for (i in allUsers) {
+        if (i.role == role) {
+            allUsers += i.copy(name = _name)
+            return
+        }
     }
 }
