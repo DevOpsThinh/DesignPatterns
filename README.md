@@ -1,5 +1,5 @@
 # Design Patterns
- ####“Design patterns are very useful when we study how they work so we can create similar patterns. They are bad when we try to copy them directly.”
+ #### “Design patterns are very useful when we study how they work so we can create similar patterns. They are bad when we try to copy them directly.”
 (Anonymous)
 
 The above quotes tells both it's significant if understood & implemented correctly & at the same time it can lead to the disasters if the need
