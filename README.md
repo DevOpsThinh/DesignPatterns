@@ -17,4 +17,4 @@ way U approach design patterns.
 *** Design Patterns are universal ***
 ###### Design patterns are typical solutions to commonly occurringproblems in software design. They are like pre-made blueprints that you can customize to solve a recurring design problem in your code.
 
-######Cheerful!
+Cheerful!
