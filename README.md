@@ -24,7 +24,7 @@ Cheerful!
 <img src="img/dprelationships.png" height="640"/>
 
 ### References:
-<img src="img/dpcover.jpg" height="320" alt="https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/ref=sr_1_1?crid=12ERJS23JOQEH&keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1644485033&s=digital-text&sprefix=design+patterns+elements+of+reusable+object-oriented+software%2Cdigital-text%2C702&sr=1-1" />
+- <img src="img/dpcover.jpg" height="320" alt="https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/ref=sr_1_1?crid=12ERJS23JOQEH&keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1644485033&s=digital-text&sprefix=design+patterns+elements+of+reusable+object-oriented+software%2Cdigital-text%2C702&sr=1-1" />
 
-  Kotlin Design Patterns and Best Practices (2e)
+-  Kotlin Design Patterns and Best Practices (2e)
 ###### https://www.packtpub.com/product/kotlin-design-patterns-and-best-practices-second-edition/9781801815727
