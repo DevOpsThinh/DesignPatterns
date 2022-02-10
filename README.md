@@ -14,7 +14,16 @@ There were 30+ patterns. All were mainly categorized into 3 categories:
 Kotlin is a very modern language & aims to solve modern problems. There are some features introduced in Kotlin which changes completely the 
 way U approach design patterns.
 
-*** Design Patterns are universal ***
+# Design Patterns are universal 
 ###### Design patterns are typical solutions to commonly occurringproblems in software design. They are like pre-made blueprints that you can customize to solve a recurring design problem in your code.
-
+____
+### Wiki:
+###### https://en.wikipedia.org/wiki/Design_Patterns
 Cheerful!
+
+<img src="img/dprelationships.png height="480"/>
+### References:
+<img src="dpcover.jpg" height="" alt="https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/ref=sr_1_1?crid=12ERJS23JOQEH&keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1644485033&s=digital-text&sprefix=design+patterns+elements+of+reusable+object-oriented+software%2Cdigital-text%2C702&sr=1-1" /
+
+  Kotlin Design Patterns and Best Practices (2e)
+###### https://www.packtpub.com/product/kotlin-design-patterns-and-best-practices-second-edition/9781801815727

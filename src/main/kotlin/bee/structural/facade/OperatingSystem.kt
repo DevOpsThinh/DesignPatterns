@@ -6,11 +6,12 @@
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
 package bee.structural.facade
+
 /**
  *  A small Operating System that has only three programs in it: Media Player, Network
  *  Service and File Manager.
  * */
-data class UserInterface (
+data class UserInterface(
     private val mediaPlayer: MediaPlayer = MediaPlayer(),
     private val netService: NetworkService = NetworkService(),
     private val fileManager: FileManager = FileManager()
@@ -19,7 +20,7 @@ data class UserInterface (
         fileManager.makeDocuments()
     }
 
-    fun  browseInternet() {
+    fun browseInternet() {
         netService.browserServer()
     }
 
