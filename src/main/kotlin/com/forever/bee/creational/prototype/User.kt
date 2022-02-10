@@ -4,7 +4,7 @@
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.creational.prototype
+package com.forever.bee.creational.prototype
 /**
  *  A system that manages users & their permissions, each user must have a role, and each
  *  role has a set of permissions

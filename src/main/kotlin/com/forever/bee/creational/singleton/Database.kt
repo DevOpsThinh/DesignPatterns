@@ -4,7 +4,7 @@
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.creational.singleton
+package com.forever.bee.creational.singleton
 /**
  * The  Database Object
  *  @author: Nguyen Truong Thinh

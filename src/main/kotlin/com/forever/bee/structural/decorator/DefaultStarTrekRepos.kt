@@ -4,12 +4,13 @@
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.structural.decorator
+package com.forever.bee.structural.decorator
 
 interface StarTrekRepos {
-    operator  fun get(starshipName: String): String
+    operator fun get(starshipName: String): String
     operator fun set(starshipName: String, captainName: String)
 }
+
 /**
  *  Simple class that registers all of the captains in the Star Trek Universe with their vessels.
  * */
@@ -23,15 +24,17 @@ class DefaultStarTrekRepos : StarTrekRepos {
         starshipCaptains[starshipName] = captainName
     }
 }
+
 /**
  *  Logging behavior (opt)
  * */
 class LoggingGetCaptain(private val repos: StarTrekRepos) : StarTrekRepos by repos {
-    override fun get(starshipName: String) : String {
+    override fun get(starshipName: String): String {
         println("Getting captain for $starshipName")
         return repos[starshipName]
     }
 }
+
 /**
  *  Validating behavior (opt)
  * */

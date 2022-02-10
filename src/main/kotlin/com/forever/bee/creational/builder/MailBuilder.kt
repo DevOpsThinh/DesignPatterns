@@ -4,7 +4,7 @@
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.creational.builder
+package com.forever.bee.creational.builder
 /**
  *  imagine we need to design a system that send emails.
  *  An email may have: An address, CC (opt), Title (opt), Body (opt), Important flag (opt).

@@ -5,7 +5,7 @@
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.structural.facade
+package com.forever.bee.structural.facade
 
 /**
  *  A small Operating System that has only three programs in it: Media Player, Network

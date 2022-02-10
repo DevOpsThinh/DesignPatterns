@@ -5,7 +5,7 @@
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.creational.factorymethod
+package com.forever.bee.creational.factorymethod
 
 interface  ChessPiece {
     val file: Char

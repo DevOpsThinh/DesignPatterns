@@ -1,10 +1,10 @@
 /**
- * Decorator (also known as: Wrapper) is a structural DP that lets u attach new behaviors to
- * objects by placing these objects inside special wrapper objects that contain the behaviors.
+ * Decorator (also known as: Wrapper) is a structural DP that allows objects with
+ * incompatible interfaces to collaborate.
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.structural.decorator
+package com.forever.bee.structural.decorator
 
 interface Recipe {
     fun cook()
@@ -15,8 +15,9 @@ class DauBunMamTom : Recipe {
         println("Preparing Dau Bun Mam Tom....")
     }
 }
+
 // delegate recipe instance & override the functions
-class BunPhoVietDecorator  (private val recipe: Recipe): Recipe by recipe {
+class BunPhoVietDecorator(private val recipe: Recipe) : Recipe by recipe {
     override fun cook() {
         recipe.cook()
         soup()

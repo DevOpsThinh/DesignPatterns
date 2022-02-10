@@ -3,7 +3,7 @@
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.creational.abstractfactory
+package com.forever.bee.creational.abstractfactory
 
 class Parser {
 

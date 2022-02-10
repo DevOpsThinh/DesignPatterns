@@ -15,13 +15,16 @@ Kotlin is a very modern language & aims to solve modern problems. There are some
 way U approach design patterns.
 
 # Design Patterns are universal 
-###### Design patterns are typical solutions to commonly occurringproblems in software design. They are like pre-made blueprints that you can customize to solve a recurring design problem in your code.
+###### Design patterns are typical solutions to commonly occurring-problems in software design. They are like pre-made blueprints that you can customize to solve a recurring design problem in your code.
 ____
 ### Wiki:
 ###### https://en.wikipedia.org/wiki/Design_Patterns
 Cheerful!
 
 <img src="img/dprelationships.png" height="640"/>
+
+### Used  Software Info:
+Kotlin v1.6, IntelliJ IDEA Education Edition, OpenJDK 17
 
 ### References:
 - <img src="img/dpcover.jpg" height="320" alt="https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/ref=sr_1_1?crid=12ERJS23JOQEH&keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1644485033&s=digital-text&sprefix=design+patterns+elements+of+reusable+object-oriented+software%2Cdigital-text%2C702&sr=1-1" />

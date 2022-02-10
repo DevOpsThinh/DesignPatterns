@@ -1,21 +1,28 @@
-import bee.creational.abstractfactory.Parser
-import bee.creational.builder.CarOne
-import bee.creational.builder.MailBuilder
-import bee.creational.factorymethod.ChessPiece
-import bee.creational.factorymethod.Server
-import bee.creational.factorymethod.createPiece
-import bee.creational.prototype.Role
-import bee.creational.prototype.User
-import bee.creational.singleton.Database
-import bee.creational.singleton.Student
-import bee.structural.decorator.*
-import bee.structural.facade.UserInterface
+import com.forever.bee.creational.abstractfactory.Parser
+import com.forever.bee.creational.builder.CarOne
+import com.forever.bee.creational.builder.MailBuilder
+import com.forever.bee.creational.factorymethod.ChessPiece
+import com.forever.bee.creational.factorymethod.Server
+import com.forever.bee.creational.factorymethod.createPiece
+import com.forever.bee.creational.prototype.Role
+import com.forever.bee.creational.prototype.User
+import com.forever.bee.creational.singleton.Database
+import com.forever.bee.creational.singleton.Student
+import com.forever.bee.structural.adapter.*
+import com.forever.bee.structural.decorator.*
+import com.forever.bee.structural.facade.*
+import java.util.stream.Stream
 
-//import bee.creational.abstractfactory.Parser.ServerConfigImpl.property
-//import bee.creational.abstractfactory.Parser.ServerConfigImpl.server
+//import java.io.FileNotFoundException
+//import kotlin.io.path.ExperimentalPathApi
+//import kotlin.io.path.Path
+
+//import com.forever.Parser.ServerConfigImpl.property
+//import com.forever.Parser.ServerConfigImpl.server
 
 private val allUsers = mutableListOf<User>()
 
+//@OptIn(ExperimentalPathApi::class)
 fun main(args: Array<String>) {
 // ********************************************************************************
 //                                                  Creational design patterns
@@ -120,7 +127,60 @@ fun main(args: Array<String>) {
         playMedia()
         manageDocs()
     }
+
+//    try {
+//        val serverABC = ServerABC.withPort(0).startFromConfiguration("/path/to/config")
+//    } catch (e: FileNotFoundException) {
+//        println("If there was a file & a parser, it would have worked")
+//    }
+    /**
+     *  The Adapter pattern
+     * */
+    cellPhone(
+        charger(
+            usPowerOutlet().toEUPlug()
+        ).toUsbTypeC()
+    )
+
+    val aLowercaseLiteral = listOf("a", "b", "c")
+
+    printStream(aLowercaseLiteral.stream())
+
+//    val s = (Stream.generate { 42 }).toList()
+//    println(s)
 }
+
+
+// A lazy collection of elements
+fun <T> collectionProcessing(c: Collection<T>) {
+    for (e in c) {
+        println(e)
+    }
+}
+
+// A stream is a lazy collection of elements
+fun <T> streamProcessing(stream: Stream<T>) {
+    // Do something.....
+}
+
+fun printStream(stream: Stream<String>) {
+    stream.forEach { e -> println(e) }
+}
+
+//@ExperimentalPathApi
+//fun ServerABC.startFromConfiguration(fileLocation: String) {
+//    val path = Path(fileLocation)
+//
+//    val lines = path.toFile().readLines()
+//
+//    val configuration = try {
+//        JsonParser().server(lines)
+//    } catch (e: RuntimeException) {
+//        YamlParser().server(lines)
+//    }
+//
+//    ServerABC.withPort(configuration.port)
+//}
 
 /**
  * use case for a singleton is an in-memory repository for a set of data of the students list

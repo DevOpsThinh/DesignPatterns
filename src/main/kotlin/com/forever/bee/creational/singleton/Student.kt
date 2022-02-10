@@ -4,7 +4,7 @@
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
-package bee.creational.singleton
+package com.forever.bee.creational.singleton
 /**
  *  A singleton use case: An app that needs a registry of students
  * */
