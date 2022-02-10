@@ -1,6 +1,6 @@
 /**
- * Adapter
- * objects by placing these objects inside special wrapper objects that contain the behaviors.
+ * Adapter  (also known as: Wrapper) is a structural DP that allows objects with
+ * incompatible interfaces to collaborate.
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */

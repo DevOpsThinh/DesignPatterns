@@ -1,3 +1,5 @@
+import com.forever.bee.behavioral.observer.TextInputObserver
+import com.forever.bee.behavioral.observer.value_Observer
 import com.forever.bee.creational.abstractfactory.Parser
 import com.forever.bee.creational.builder.CarOne
 import com.forever.bee.creational.builder.MailBuilder
@@ -148,6 +150,15 @@ fun main(args: Array<String>) {
 
 //    val s = (Stream.generate { 42 }).toList()
 //    println(s)
+
+    // ********************************************************************************
+    //                                                  Behavioral design patterns
+    // ********************************************************************************
+    val textInputObs = TextInputObserver(value_Observer)
+    textInputObs.run {
+        text = "Hi"
+        text = "Anyone!"
+    }
 }
 
 
