@@ -1,13 +1,13 @@
 /**
- * Lets u construct complex  objects step by step & allows u to produce different types &
+ * Lets u construct complex objects step by step & allows u to produce different types &
  * representations of an object using the same construction code.
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
 package com.forever.bee.creational.builder
 /**
- *  imagine we need to design a system that send emails.
- *  An email may have: An address, CC (opt), Title (opt), Body (opt), Important flag (opt).
+ * imagine we need to design a system that send emails.
+ * An email may have: An address, CC (opt), Title (opt), Body (opt), Important flag (opt).
  *  /**
  *  Will wrap our Mail class
  *  */

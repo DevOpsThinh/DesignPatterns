@@ -1,8 +1,8 @@
 package com.forever.bee.creational.builder
 /**
  * The  Car's Version 1
- *  A car depends on a lot of things: engine, number of doors, colors, name, transmission
- *  model, braking system, etc.
+ * A car depends on a lot of things: engine, number of doors, colors, name, transmission
+ * model, braking system, etc.
  *  @author: Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */

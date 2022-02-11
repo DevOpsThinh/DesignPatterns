@@ -1,5 +1,5 @@
 /**
- * Adapter  (also known as: Wrapper) is a structural DP that allows objects with
+ * Adapter (also known as: Wrapper) is a structural DP that allows objects with
  * incompatible interfaces to collaborate.
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504

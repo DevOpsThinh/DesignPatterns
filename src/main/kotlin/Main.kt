@@ -1,5 +1,7 @@
-import com.forever.bee.behavioral.observer.TextInputObserver
-import com.forever.bee.behavioral.observer.value_Observer
+import com.forever.bee.behavioral.chainofresponsibility.ATM
+import com.forever.bee.behavioral.mediator.DiegoMaradona
+import com.forever.bee.behavioral.mediator.MyCompany
+import com.forever.bee.behavioral.observer.*
 import com.forever.bee.creational.abstractfactory.Parser
 import com.forever.bee.creational.builder.CarOne
 import com.forever.bee.creational.builder.MailBuilder
@@ -154,11 +156,48 @@ fun main(args: Array<String>) {
     // ********************************************************************************
     //                                                  Behavioral design patterns
     // ********************************************************************************
+    /**
+     *  The observer patterns
+     * */
     val textInputObs = TextInputObserver(value_Observer)
     textInputObs.run {
         text = "Hi"
         text = "Anyone!"
     }
+
+    val beeTheConductor = Bee()
+
+    val goat = Goat()
+    val dog = Dog()
+    val turkey = Turkey()
+
+    beeTheConductor.joinChoir(dog::bark)
+    beeTheConductor.joinChoir(dog::howl)
+
+    beeTheConductor.leaveChoir(dog::howl)
+
+    beeTheConductor.conduct(5)
+
+    /**
+     *  The mediator pattern
+     * */
+    val productManager = DiegoMaradona
+    val company = MyCompany(productManager)
+    company.allTasksCompleted(true)
+
+    /**
+     *  The Chain of Responsibility - CoR
+     * */
+    ATM().apply {
+        withdrawMoney(6000000)
+        println()
+        withdrawMoney(4800000)
+        println()
+        withdrawMoney(3500000)
+    }
+    println("--------------------------------------------")
+    val atm = ATM()
+    atm.withdrawMoney(5700000)
 }
 
 
