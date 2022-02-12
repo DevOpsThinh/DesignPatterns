@@ -43,6 +43,7 @@ class Builder {
     internal var fuelType: String? = null
     internal var carType: String? = null
 
+    // Setters
     fun setName(name: String): Builder {
         this.name = name
         return this

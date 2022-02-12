@@ -14,13 +14,13 @@ package com.forever.bee.behavioral.chainofresponsibility
 * it calculates the currency notes & dispenses it to U. This can be done using a CoR.
 * */
 
-interface  CurrencyDispenser {
+interface CurrencyDispenser {
     val currencyValue: Int
     val nextDispenser: CurrencyDispenser?
     fun dispenseMo(amount: Int)
 }
 
-class DispenseOne(override val currencyValue: Int = 1000000, override val nextDispenser: CurrencyDispenser? = null): CurrencyDispenser {
+class DispenseOne(override val currencyValue: Int = 1000000, override val nextDispenser: CurrencyDispenser? = null) : CurrencyDispenser {
     override fun dispenseMo(amount: Int) {
         if (amount >= currencyValue) {
             val (quantity, remainder) = amount.getQuantityAndRemainder(currencyValue)
@@ -34,7 +34,7 @@ class DispenseOne(override val currencyValue: Int = 1000000, override val nextDi
     }
 }
 
-class DispenseTwo(override val nextDispenser: CurrencyDispenser? = null, override val currencyValue: Int = 2000000): CurrencyDispenser {
+class DispenseTwo(override val nextDispenser: CurrencyDispenser? = null, override val currencyValue: Int = 2000000) : CurrencyDispenser {
     override fun dispenseMo(amount: Int) {
         if (amount >= currencyValue) {
             val (quantity, remainder) = amount.getQuantityAndRemainder(currencyValue)
@@ -46,7 +46,7 @@ class DispenseTwo(override val nextDispenser: CurrencyDispenser? = null, overrid
     }
 }
 
-class DispenseThree(override val nextDispenser: CurrencyDispenser? = null, override val currencyValue: Int = 3000000): CurrencyDispenser {
+class DispenseThree(override val nextDispenser: CurrencyDispenser? = null, override val currencyValue: Int = 3000000) : CurrencyDispenser {
     override fun dispenseMo(amount: Int) {
         if (amount >= currencyValue) {
             val (quantity, remainder) = amount.getQuantityAndRemainder(currencyValue)
@@ -63,7 +63,7 @@ class ATM {
     private val two = DispenseTwo(one)
     private val three = DispenseThree(two)
 
-    fun withdrawMoney (amount: Int) {
+    fun withdrawMoney(amount: Int) {
         three.dispenseMo(amount)
         println("Denominations for $amount")
     }

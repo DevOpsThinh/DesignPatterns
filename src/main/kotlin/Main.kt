@@ -1,4 +1,4 @@
-import com.forever.bee.behavioral.chainofresponsibility.ATM
+import com.forever.bee.behavioral.chainofresponsibility.*
 import com.forever.bee.behavioral.mediator.DiegoMaradona
 import com.forever.bee.behavioral.mediator.MyCompany
 import com.forever.bee.behavioral.observer.*
@@ -13,6 +13,8 @@ import com.forever.bee.creational.prototype.User
 import com.forever.bee.creational.singleton.Database
 import com.forever.bee.creational.singleton.Student
 import com.forever.bee.structural.adapter.*
+import com.forever.bee.structural.bridge.*
+import com.forever.bee.structural.composite.Squad
 import com.forever.bee.structural.decorator.*
 import com.forever.bee.structural.facade.*
 import java.util.stream.Stream
@@ -198,8 +200,50 @@ fun main(args: Array<String>) {
     println("--------------------------------------------")
     val atm = ATM()
     atm.withdrawMoney(5700000)
-}
 
+//    val req = Request("bee@company.com", "Who broke my build?")
+//    val chain = BasicValidationHandler(
+//        KnownEmailHandler(
+//            JuniorDevFilterHandler(
+//                AnswerHandler()
+//            )
+//        )
+//    )
+//    val res = chain.handle(red)
+
+    val req = Request("bee@company.com",
+        "Why do we need Software Architects?")
+    val chain = basicValidation(authentication(finalResponse()))
+    val res = chain(req)
+    println("--------------------------------------------")
+    println(res)
+    println("--------------------------------------------")
+    /**
+     * The Bridge pattern
+     * */
+    val stormTrooper = StormTrooper(Rifle(), RegularLegs())
+    val flameTrooper = StormTrooper(Flamethrower(), RegularLegs())
+    val scoutTrooper = StormTrooper(Rifle() , AthleticLegs())
+
+    println(listOf(stormTrooper, flameTrooper, scoutTrooper))
+    println("--------------------------------------------")
+    /**
+     * The Composite pattern
+     * */
+    val boba = StormTrooper(Rifle(), RegularLegs())
+    val squad = Squad(listOf(boba.copy(), boba.copy(), boba.copy()))
+    squad.attackRebel(1, 2)
+
+    val secondSquad = Squad(
+        boba.copy(),
+        boba.copy(),
+        boba.copy()
+    )
+
+    println(listOf(squad, secondSquad))
+    println("--------------------------------------------")
+
+}
 
 // A lazy collection of elements
 fun <T> collectionProcessing(c: Collection<T>) {
