@@ -17,6 +17,8 @@ import com.forever.bee.structural.bridge.*
 import com.forever.bee.structural.composite.Squad
 import com.forever.bee.structural.decorator.*
 import com.forever.bee.structural.facade.*
+import com.forever.bee.structural.flyweight.CarnivorousSnailArcade
+import com.forever.bee.structural.proxy.CatImage
 import java.util.stream.Stream
 
 //import java.io.FileNotFoundException
@@ -155,6 +157,47 @@ fun main(args: Array<String>) {
 //    val s = (Stream.generate { 42 }).toList()
 //    println(s)
 
+    /**
+     * The Bridge pattern
+     * */
+    val stormTrooper = StormTrooper(Rifle(), RegularLegs())
+    val flameTrooper = StormTrooper(Flamethrower(), RegularLegs())
+    val scoutTrooper = StormTrooper(Rifle(), AthleticLegs())
+
+    println(listOf(stormTrooper, flameTrooper, scoutTrooper))
+    println("--------------------------------------------")
+    /**
+     * The Composite pattern
+     * */
+    val boba = StormTrooper(Rifle(), RegularLegs())
+    val squad = Squad(listOf(boba.copy(), boba.copy(), boba.copy()))
+    squad.attackRebel(1, 2)
+
+    val secondSquad = Squad(
+        boba.copy(),
+        boba.copy(),
+        boba.copy()
+    )
+
+    println(listOf(squad, secondSquad))
+    println("--------------------------------------------")
+    /**
+     * The Flyweight pattern
+     * */
+    // Flyweight allows us to create much more objects that otherwise possible
+    val snails = List(10_000) { CarnivorousSnailArcade() }
+
+    /**
+     * The Proxy pattern
+     * */
+    val cat = CatImage(
+        "https://i.chzbgr.com/full/9026714368/hBB09ABBE/i-will-has-attention",
+        "https://i.chzbgr.com/full/9026714368/hBB09ABBE/i-will-has-attention"
+    )
+    println(cat.image.size)
+    println(cat.thumbnailUrl)
+    println(cat.url.length)
+
     // ********************************************************************************
     //                                                  Behavioral design patterns
     // ********************************************************************************
@@ -211,36 +254,14 @@ fun main(args: Array<String>) {
 //    )
 //    val res = chain.handle(red)
 
-    val req = Request("bee@company.com",
-        "Why do we need Software Architects?")
+    val req = Request(
+        "bee@company.com",
+        "Why do we need Software Architects?"
+    )
     val chain = basicValidation(authentication(finalResponse()))
     val res = chain(req)
     println("--------------------------------------------")
     println(res)
-    println("--------------------------------------------")
-    /**
-     * The Bridge pattern
-     * */
-    val stormTrooper = StormTrooper(Rifle(), RegularLegs())
-    val flameTrooper = StormTrooper(Flamethrower(), RegularLegs())
-    val scoutTrooper = StormTrooper(Rifle() , AthleticLegs())
-
-    println(listOf(stormTrooper, flameTrooper, scoutTrooper))
-    println("--------------------------------------------")
-    /**
-     * The Composite pattern
-     * */
-    val boba = StormTrooper(Rifle(), RegularLegs())
-    val squad = Squad(listOf(boba.copy(), boba.copy(), boba.copy()))
-    squad.attackRebel(1, 2)
-
-    val secondSquad = Squad(
-        boba.copy(),
-        boba.copy(),
-        boba.copy()
-    )
-
-    println(listOf(squad, secondSquad))
     println("--------------------------------------------")
 
 }

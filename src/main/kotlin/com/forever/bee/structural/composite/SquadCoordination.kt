@@ -1,8 +1,6 @@
 /**
- * Bridge is structural DP that lets u split a large class or a set of closely related classes
- * into two separate hierarchies-abstraction & implementation-which can be developed
- * independently of each other. --> The idea behind it is to flatten the class hierarchy &
- * have fewer specialized classes & avoid the fragile base class.
+ * Composite (also known as: Object Tree) is a structural DP that lets u compose objects
+ * into tree structures & then work with these structures as if they were individual objects.
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
