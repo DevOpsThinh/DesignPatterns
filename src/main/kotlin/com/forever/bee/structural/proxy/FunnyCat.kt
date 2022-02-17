@@ -1,5 +1,6 @@
 /**
- * Proxy (Sub-patterns: virtual - remote - protection or access control proxy) is a structural DP that let u provide a substitute or placeholder for another object.
+ * Proxy (Sub-patterns: virtual - remote - protection or access control proxy) is a structural
+ * DP that let u provide a substitute or placeholder for another object.
  * It controls access to the original object, allowing u to perform something either before
  * or after the request gets through to the original object.
  * @author Nguyen Truong Thinh

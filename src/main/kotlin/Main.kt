@@ -3,6 +3,7 @@ import com.forever.bee.behavioral.mediator.DiegoMaradona
 import com.forever.bee.behavioral.mediator.MyCompany
 import com.forever.bee.behavioral.memento.MyManager
 import com.forever.bee.behavioral.observer.*
+import com.forever.bee.behavioral.templatemethod.runSchedule
 import com.forever.bee.behavioral.visitor.*
 import com.forever.bee.creational.abstractfactory.Parser
 import com.forever.bee.creational.builder.CarOne
@@ -289,6 +290,18 @@ fun main(args: Array<String>) {
 
     println(collectLinks(page))
     println("--------------------------------------------")
+    /**
+     * The Template Method
+     * */
+    runSchedule(afterLunch = fun() {
+        println("")
+        println("")
+    }, beforeLunch = {
+        println("")
+    }, readingEbook = {
+        println("I'm reading it.")
+
+    })
 }
 
 // A lazy collection of elements
