@@ -16,7 +16,7 @@ package com.forever.bee.behavioral.templatemethod
 * 4. 11h30 am - 1h00 pm: Go out for lunch;
 * 5. 1h00 pm - 2h30 pm: Attend some meetings or review code
 * 6. 2h30 pm - 5h00pm: Hardworking;
-* 7. 5h00 pm: Sneak back home.
+* 7. 5h00 pm: Go to dinner.
 * */
 
 abstract class DayRoutine {

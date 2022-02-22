@@ -1,4 +1,5 @@
 import com.forever.bee.behavioral.chainofresponsibility.*
+import com.forever.bee.behavioral.interpreter.select
 import com.forever.bee.behavioral.mediator.DiegoMaradona
 import com.forever.bee.behavioral.mediator.MyCompany
 import com.forever.bee.behavioral.memento.MyManager
@@ -302,6 +303,16 @@ fun main(args: Array<String>) {
         println("I'm reading it.")
 
     })
+    println("--------------------------------------------")
+    /**
+     * The Interpreter pattern: Our DSL
+     * */
+    val query =  select("name, age") {
+        from("users") {
+            where("age > 29")
+        } // closes from
+    } // closes select
+    println(query)
 }
 
 // A lazy collection of elements

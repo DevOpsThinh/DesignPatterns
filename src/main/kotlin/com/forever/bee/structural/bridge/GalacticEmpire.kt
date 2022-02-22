@@ -1,5 +1,5 @@
 /**
- * Bridge is structural DP that lets u split a large class or a set of closely related classes
+ * Bridge (also known as: Handle/Body) is structural DP that lets u split a large class or a set of closely related classes
  * into two separate hierarchies-abstraction & implementation-which can be developed
  * independently of each other. --> The idea behind it is to flatten the class hierarchy &
  * have fewer specialized classes & avoid the fragile base class.
