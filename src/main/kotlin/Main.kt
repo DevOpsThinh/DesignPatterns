@@ -1,9 +1,11 @@
 import com.forever.bee.behavioral.chainofresponsibility.*
 import com.forever.bee.behavioral.interpreter.select
+import com.forever.bee.behavioral.iterator.Squadation
 import com.forever.bee.behavioral.mediator.DiegoMaradona
 import com.forever.bee.behavioral.mediator.MyCompany
 import com.forever.bee.behavioral.memento.MyManager
 import com.forever.bee.behavioral.observer.*
+import com.forever.bee.behavioral.strategy.*
 import com.forever.bee.behavioral.templatemethod.runSchedule
 import com.forever.bee.behavioral.visitor.*
 import com.forever.bee.creational.abstractfactory.Parser
@@ -163,6 +165,7 @@ fun main(args: Array<String>) {
     val stormTrooper = StormTrooper(Rifle(), RegularLegs())
     val flameTrooper = StormTrooper(Flamethrower(), RegularLegs())
     val scoutTrooper = StormTrooper(Rifle(), AthleticLegs())
+    val battonTrooper = StormTrooper(Batton(), AthleticLegs())
 
     println(listOf(stormTrooper, flameTrooper, scoutTrooper))
     println("--------------------------------------------")
@@ -313,6 +316,37 @@ fun main(args: Array<String>) {
         } // closes from
     } // closes select
     println(query)
+    println("--------------------------------------------")
+    /**
+     * The Strategy pattern
+     * */
+    val hero = OurHero()
+    hero.shoot()
+    hero.currentWeapon = Weapons::banana
+    //hero.currentWeapon = Weapons::pomegranate
+    hero.shoot()
+    println("--------------------------------------------")
+    /**
+     * The Iterator pattern
+     * */
+    val platoon = Squadation(
+        stormTrooper,
+        Squadation(
+            stormTrooper,
+        ),
+        Squadation(
+            flameTrooper,
+            flameTrooper,
+        ),
+        battonTrooper
+    )
+
+    val list = listOf<String>()
+    list.iterator()
+    // For loop range must have an iterator method
+    for (trooper in platoon) {
+        println(trooper)
+    }
 }
 
 // A lazy collection of elements
