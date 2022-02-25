@@ -1,10 +1,14 @@
 import com.forever.bee.behavioral.chainofresponsibility.*
+import com.forever.bee.behavioral.command.Troopers
+import com.forever.bee.behavioral.command.moveGenerator
 import com.forever.bee.behavioral.interpreter.select
 import com.forever.bee.behavioral.iterator.Squadation
 import com.forever.bee.behavioral.mediator.DiegoMaradona
 import com.forever.bee.behavioral.mediator.MyCompany
 import com.forever.bee.behavioral.memento.MyManager
 import com.forever.bee.behavioral.observer.*
+import com.forever.bee.behavioral.state.Snail
+import com.forever.bee.behavioral.state.Still
 import com.forever.bee.behavioral.strategy.*
 import com.forever.bee.behavioral.templatemethod.runSchedule
 import com.forever.bee.behavioral.visitor.*
@@ -257,7 +261,7 @@ fun main(args: Array<String>) {
     val req = Request(
         "bee@company.com", "Why do we need Software Architects?"
     )
-    val chain = basicValidation(authentication(finalResponse()))
+    val chain = basicValidation(authentication(finalResponse()) as Handler)
     val res = chain(req)
     println("--------------------------------------------")
     println(res)
@@ -347,6 +351,26 @@ fun main(args: Array<String>) {
     for (trooper in platoon) {
         println(trooper)
     }
+    println("--------------------------------------------")
+    /**
+     * The State pattern
+     * */
+    var snail = Snail()
+    val mood = Still(snail)
+    println(mood.seeHero())
+    println(mood.getHit(10))
+    println("--------------------------------------------")
+    /**
+     * The Command pattern
+     * */
+    val trooper = Troopers()
+
+    trooper.addOrder(moveGenerator(trooper, 1, 1))
+    trooper.addOrder(moveGenerator(trooper, 2, 2))
+    trooper.addOrder(moveGenerator(trooper, 3, 3))
+    trooper.addOrder(moveGenerator(trooper, 4, 4))
+
+    trooper.executeOrders()
 }
 
 // A lazy collection of elements

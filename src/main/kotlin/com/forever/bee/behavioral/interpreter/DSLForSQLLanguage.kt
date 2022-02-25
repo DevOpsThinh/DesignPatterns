@@ -2,7 +2,7 @@
  * Interpreter is a behavioral DP that intents given a language, define a representation for
  * its grammar along with an interpreter that uses the representation to interpret sentences
  * in the language.
- * This pattern & Kotlin's abilities to procedure DSLs with type-safe builders are compelling
+ * This pattern & Kotlin's abilities to procedure DSLs with type-safe builders are compelling.
  * @author Nguyen Truong Thinh
  *  ->  Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
  * */
