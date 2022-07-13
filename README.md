@@ -1,3 +1,4 @@
+<strong><em>Thanks for your reading, please give me a STAR!<em><strong>
 # Design Patterns
  #### “Design patterns are very useful when we study how they work so we can create similar patterns. They are bad when we try to copy them directly.”
 (Anonymous)
